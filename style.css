@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    font-family: sans-serif;
+    color: white;
+}
+
+.location, .temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree-section{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.degree-section span {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section h2 {
+    font-size: 40px;
+}
+
+.search-box {
+    width: 60%;
+    min-width: 280px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 16px 0 16px 0;
+    border-bottom: 3px solid #df8e00;
+    color: #333;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+}
+
+.search-box:focus{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 16px 0 16px;
+}
