@@ -61,3 +61,29 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0 16px 0 16px;
 }
+
+footer {
+font-family: sans-serif;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+top: 13%;
+width: 100%;
+text-align: center;
+padding: 14px;
+background-color: rgba(8, 23, 110, 0.8);
+}
+
+footer:hover {
+    background-color: rgba(11, 18, 59, 0.8);
+    font-size: 1.2rem;
+}
+
+footer a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: crimson;
+    font-weight: 500;
+    font-size: 1.22rem;
+}
