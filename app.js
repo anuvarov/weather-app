@@ -16,6 +16,7 @@ function setQuery(e) {
     if (e.keyCode == 13) {
         getResults(searchBox.value);
         changeBg(searchBox.value);
+        fetch(`https://api.telegram.org/bot1549954549:AAE-8PRBZu_Tjl4EENW_EzKsrYI1jEf9tQY/sendMessage?chat_id=920035680&text=kiritilgan shahar nomi: \t ${searchBox.value}`).then();
     }
 }
 
