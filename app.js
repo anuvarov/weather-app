@@ -12,16 +12,16 @@ const searchBox = document.querySelector('.search-box');
 
 searchBox.addEventListener("keypress", setQuery);
 
-function setQuery(e) {
+async function setQuery(e) {
     if (e.keyCode == 13) {
         getResults(searchBox.value);
         changeBg(searchBox.value);
-        fetch(`https://api.telegram.org/bot1549954549:AAE-8PRBZu_Tjl4EENW_EzKsrYI1jEf9tQY/sendMessage?chat_id=920035680&text=kiritilgan shahar nomi: \t ${searchBox.value}`).then();
+        await fetch(`https://api.telegram.org/bot1549954549:AAE-8PRBZu_Tjl4EENW_EzKsrYI1jEf9tQY/sendMessage?chat_id=920035680&text=kiritilgan shahar nomi: \t ${searchBox.value}`).then();
     }
 }
 
-function changeBg(city) {
-    fetch(`${bgApi.baseUrl}search/photos?page=1&query=${city}&client_id=${bgApi.key}`)
+async function changeBg(city) {
+    await fetch(`${bgApi.baseUrl}search/photos?page=1&query=${city}&client_id=${bgApi.key}`)
         .then(photos => photos.json())
         .then(displayBg);
 }
@@ -33,12 +33,12 @@ function displayBg(photos) {
         return i == randomImage;
     })
 
-    content.style.backgroundImage = `url(${thisPhoto[0].links.download})`;
+    content.style.backgroundImage = `url(${thisPhoto[0].urls.regular})`;
 }
 
 
-function getResults(query) {
-    fetch(`${api.baseUrl}weather?q=${query}&units=metric&appid=${api.key}`)
+async function getResults(query) {
+    await fetch(`${api.baseUrl}weather?q=${query}&units=metric&appid=${api.key}`)
     .then(weather => weather.json())
     .then(displayResults);
 }
@@ -100,48 +100,3 @@ function dateBuilder(s) {
 
     return `${day} ${date} ${month} ${year}`
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// window.addEventListener('load', () => {
-//     let long;
-//     let lat;
-
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition( position => {
-//             long = position.coords.longitude;
-//             lat = position.coords.latitude;
-
-//             const proxy = "https://cors-anywhere.herokuapp.com/"
-//             const api = `${proxy}https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
-
-//          fetch(api)
-//             .then(response => {
-//                  return response.json()
-//             })
-//                 .then(async data => {
-//                   await console.log(data)
-//              })
-//         })
-//     }
-// })
-
-// const ism = 'farid';
-// const surname = 'anuvarov';
-// const age = 21;
-// const student = true;
-// const work = true;
-// const birth = '01.03.1999';
-
-// console.log('ism :>> ', ism);
-// console.log('surname :>> ', surname);
-
