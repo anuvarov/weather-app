@@ -32,7 +32,7 @@ function displayBg(photos) {
         return i == randomImage;
     })
 
-    content.style.backgroundImage = `url(${thisPhoto[0].links.self})`;
+    content.style.backgroundImage = `url(${thisPhoto[0].links.download})`;
 }
 
 
