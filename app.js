@@ -29,10 +29,10 @@ function displayBg(photos) {
     let content = document.querySelector('.content');
     let randomImage = Math.floor(Math.random() * 10);
     let thisPhoto = photos.results.filter((el, i) => {
-        return i == randomImage
+        return i == randomImage;
     })
-    
-    content.style.backgroundImage = `url(${thisPhoto[0].links.download})`;
+
+    content.style.backgroundImage = `url(${thisPhoto[0].links.self})`;
 }
 
 

@@ -38,10 +38,53 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-
     .location,
     .temperature {
         width: 70%;
+    }
+
+    .location {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .location-timezone {
+        padding: 20px;
+    }
+
+    .date {
+        padding: 0 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .location,
+    .temperature {
+        width: 80%;
+        background-color: red;
+    }
+
+    .location {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .location-timezone {
+        padding: 20px;
+    }
+
+    .date {
+        padding: 0 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .location,
+    .temperature {
+        width: 90%;
+        background-color: red;
     }
 
     .location {
