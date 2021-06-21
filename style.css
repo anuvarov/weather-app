@@ -62,7 +62,6 @@ body {
     .location,
     .temperature {
         width: 80%;
-        background-color: red;
     }
 
     .location {
@@ -84,7 +83,6 @@ body {
     .location,
     .temperature {
         width: 90%;
-        background-color: red;
     }
 
     .location {
