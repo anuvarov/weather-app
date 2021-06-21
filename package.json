@@ -1,0 +1,26 @@
+{
+  "name": "weather-app",
+  "version": "1.1.1",
+  "description": "'Ob-havo haqida malumot'",
+  "main": "app.js",
+  "scripts": {
+    "test": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuvarov/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "ob-havo"
+  ],
+  "author": "Farid Anuvarov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuvarov/weather-app/issues"
+  },
+  "homepage": "https://github.com/anuvarov/weather-app#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
