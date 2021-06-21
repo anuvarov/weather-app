@@ -1,3 +1,5 @@
+require('dotenv');
+
 const api = {
     key: process.env.WEATHER_API_KEY,
     baseUrl: process.env.WEATHER_API_URL
