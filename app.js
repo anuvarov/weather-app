@@ -3,6 +3,11 @@ const api = {
     baseUrl: "https://api.openweathermap.org/data/2.5/"
 };
 
+const bgApi = {
+    key: 'sApxRGnLoIJZyxgk2DQ31fAmUiwd8kHyZuVSG2pvvhY',
+    baseUrl: 'https://api.unsplash.com/',
+}
+
 const searchBox = document.querySelector('.search-box');
 
 searchBox.addEventListener("keypress", setQuery);
@@ -10,7 +15,24 @@ searchBox.addEventListener("keypress", setQuery);
 function setQuery(e) {
     if (e.keyCode == 13) {
         getResults(searchBox.value);
+        changeBg(searchBox.value);
     }
+}
+
+function changeBg(city) {
+    fetch(`${bgApi.baseUrl}search/photos?page=1&query=${city}&client_id=${bgApi.key}`)
+        .then(photos => photos.json())
+        .then(displayBg);
+}
+
+function displayBg(photos) {
+    let content = document.querySelector('.content');
+    let randomImage = Math.floor(Math.random() * 10);
+    let thisPhoto = photos.results.filter((el, i) => {
+        return i == randomImage
+    })
+    
+    content.style.backgroundImage = `url(${thisPhoto[0].links.download})`;
 }
 
 

@@ -10,24 +10,59 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
     font-family: sans-serif;
     color: white;
 }
 
-.location, .temperature {
+.content {
+    padding: 50px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    text-align: justify;
+    font-family: arial;
+}
+
+.location,
+.temperature {
     height: 30vh;
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 900px) {
+
+    .location,
+    .temperature {
+        width: 70%;
+    }
+
+    .location {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .location-timezone {
+        padding: 20px;
+    }
+
+    .date {
+        padding: 0 20px 0 20px;
+    }
 }
 
 .temperature {
     flex-direction: column;
 }
 
-.degree-section{
+.degree-section {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -43,6 +78,7 @@ body {
 }
 
 .search-box {
+    /* margin: 50px; */
     width: 60%;
     min-width: 280px;
     padding: 10px 15px;
@@ -57,26 +93,27 @@ body {
     transition: 0.2s ease-out;
 }
 
-.search-box:focus{
+.search-box:focus {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 0 16px 0 16px;
 }
 
 footer {
-font-family: sans-serif;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: center;
-top: 13%;
-width: 100%;
-text-align: center;
-padding: 14px;
-background-color: rgba(8, 23, 110, 0.8);
+    font-family: sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 14%;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    background-color: rgba(8, 23, 110, 0.6);
+    border-radius: 25px;
 }
 
 footer:hover {
-    background-color: rgba(11, 18, 59, 0.8);
+    background-color: rgba(11, 18, 59, 0.4);
     font-size: 1.2rem;
 }
 
