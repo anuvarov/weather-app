@@ -1,19 +1,12 @@
-require('dotenv').config();
-
 const api = {
-    key: process.env.WEATHER_API_KEY,
-    baseUrl: process.env.WEATHER_API_URL
+    key: '2f50a78242c901b2d7a3f6a2f78c7ae1',
+    baseUrl: "https://api.openweathermap.org/data/2.5/"
 };
 
 const bgApi = {
-    key: process.env.UNSPLASH_API_KEY,
-    baseUrl: process.env.UNSPLASH_API_URL,
-};
-
-const admin = process.env.ADMIN;
-const token = process.env.TELEGRAM_BOT_TOKEN;
-
-const getIP = process.env.GET_IP;
+    key: 'sApxRGnLoIJZyxgk2DQ31fAmUiwd8kHyZuVSG2pvvhY',
+    baseUrl: 'https://api.unsplash.com/',
+}
 
 const searchBox = document.querySelector('.search-box');
 
@@ -23,17 +16,17 @@ async function setQuery(e) {
     if (e.keyCode == 13) {
         getResults(searchBox.value);
         changeBg(searchBox.value);
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${admin}&text=kiritilgan shahar nomi: \t ${searchBox.value}&disable_notification=true`).then();
+        await fetch(`https://api.telegram.org/bot1549954549:AAE-8PRBZu_Tjl4EENW_EzKsrYI1jEf9tQY/sendMessage?chat_id=920035680&text=kiritilgan shahar nomi: \t ${searchBox.value}&disable_notification=true`).then();
     }
 }
 
 (function () {
-    fetch(getIP)
+    fetch('https://api.ipify.org/?format=json')
         .then(response => response.json())
         .then(data => {
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${admin}&text=foydalanuvchi IP manzili: \t ${data.ip}&disable_notification=true`).then();
+            fetch(`https://api.telegram.org/bot1549954549:AAE-8PRBZu_Tjl4EENW_EzKsrYI1jEf9tQY/sendMessage?chat_id=920035680&text=foydalanuvchi IP manzili: \t ${data.ip}&disable_notification=true`).then();
         });
-
+    
 })()
 
 
@@ -56,16 +49,16 @@ function displayBg(photos) {
 
 async function getResults(query) {
     await fetch(`${api.baseUrl}weather?q=${query}&units=metric&appid=${api.key}`)
-        .then(weather => weather.json())
-        .then(displayResults);
+    .then(weather => weather.json())
+    .then(displayResults);
 }
 
 getDefaultResults("tashkent");
 
 function getDefaultResults(query) {
     fetch(`${api.baseUrl}weather?q=${query}&units=metric&appid=${api.key}`)
-        .then(weather => weather.json())
-        .then(defaultW);
+    .then(weather => weather.json())
+    .then(defaultW);
 }
 
 function defaultW(weather) {
@@ -109,7 +102,7 @@ function displayResults(weather) {
 function dateBuilder(s) {
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+    
     let day = days[s.getDay()];
     let date = s.getDate()
     let month = months[s.getMonth()];
